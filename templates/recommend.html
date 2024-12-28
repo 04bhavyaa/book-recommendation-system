@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#00a65a;">
+        <a class="navbar-brand" href="#">My Book Recommender</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommend">Recommend</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Recommend Books</h1>
+        
+        <!-- Recommendation Form -->
+        <form action="/recommend_books" method="post" class="mb-4">
+            <div class="input-group">
+                <input name="user_input" type="text" class="form-control" placeholder="Enter a book title" required>
+                <button type="submit" class="btn btn-warning">Recommend</button>
+            </div>
+        </form>
+
+        <!-- Display Recommendations -->
+        {% if data %}
+        <div class="row">
+            {% for i in data %}
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ i[2] }}" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i[0] }}</h5>
+                        <p class="card-text">{{ i[1] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center text-warning mt-4">
+            <p>No recommendations available. Try entering a book title.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="bg-dark text-white py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Step 1: Input</h4>
+                            <p class="card-text">Enter a book title, and our system will fetch recommendations based on it.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Step 2: Analyze</h4>
+                            <p class="card-text">Our system processes the book title and analyzes similar books based on data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Step 3: Receive Recommendations</h4>
+                            <p class="card-text">Receive a list of book recommendations tailored to your preferences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My Book Recommender | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+
+</html>

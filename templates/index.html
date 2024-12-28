@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#00a65a;">
+        <a class="navbar-brand" href="#">My Book Recommender</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommend">Recommend</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center py-5" style="background: linear-gradient(135deg, #00a65a 0%, #1e2b3b 100%);">
+        <h1 class="display-3">Discover Your Next Favorite Book</h1>
+        <p class="lead">Explore top-rated books tailored to your taste with our Book Recommender System.</p>
+        <a href="/recommend" class="btn btn-warning btn-lg">Get Recommendations</a>
+    </header>
+
+    <!-- How It Works Section -->
+    <section class="bg-dark text-white py-5">
+        <div class="container">
+            <h2 class="text-center">How It Works</h2>
+            <div class="row">
+                <!-- Step 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Step 1: Select a Book</h4>
+                            <p class="card-text">Browse our collection and choose a book from the top 50 most popular titles.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Step 2: Get Recommendations</h4>
+                            <p class="card-text">Get personalized book recommendations based on your selected book.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Step 3: Start Reading</h4>
+                            <p class="card-text">Enjoy your recommended books and dive into an exciting reading experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Featured Books Section -->
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Featured Books</h2>
+        <div class="row">
+            {% for i in range(book_name|length) %}
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ image_url[i] }}" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book_name[i] }}</h5>
+                        <p class="card-text">Author: {{ author[i] }}</p>
+                        <p class="card-text">Total Votes: {{ votes[i] }}</p>
+                        <p class="card-text">Average Rating: {{ avg_rating[i] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-4">
+        <p>&copy; 2024 My Book Recommender. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+
+</html>
