@@ -23,7 +23,28 @@ A book recommendation system built using Popularity-Based Recommender, Collabora
     - Cosine Similarity: Recommends books by finding similarities between user ratings or book attributes.
 
 ### Directory Structure:
-
+```
+Directory structure:
+└── 04bhavyaa-book-recommendation-system/
+    ├── book-recommendation-system.ipynb
+    ├── app.py
+    ├── book-data-eda.ipynb
+    ├── data/
+    │   ├── ratings_books_users.csv
+    │   ├── book_data.pkl
+    │   ├── popular_books.pkl
+    │   ├── Ratings.csv
+    │   ├── Users.csv
+    │   ├── similarity_score.pkl
+    │   ├── pivot_table_data.pkl
+    │   └── Books.csv
+    ├── README.md
+    ├── templates/
+    │   ├── index.html
+    │   └── recommend.html
+    └── static/
+        └── styles.css
+```
 
 ### Future Enhancements
 1. Personalization: Allow users to create an account, rate books, and provide more tailored recommendations.
