@@ -2,7 +2,7 @@
 A book recommendation system built using Popularity-Based Recommender, Collaborative Filtering, and Cosine Similarity. This project provides personalized book recommendations to users based on their preferences. It is implemented using Flask as the web framework.
 
 ### Watch the demo video:
-[Click here to watch the demo video](Recommender-system.mp4)
+[Click here to watch the demo video](Recommender-System.mp4)
 
 ### Features
 - Popularity-Based Recommendation: Suggests books based on their popularity (e.g., top-rated books).
