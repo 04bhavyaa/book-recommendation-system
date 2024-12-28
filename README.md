@@ -14,9 +14,6 @@ A book recommendation system built using Popularity-Based Recommender, Collabora
 - Cosine Similarity: Measure of similarity between two vectors of user preferences.
 - Bootstrap: Front-end framework for responsive design.
 
-### Demo: 
-<video controls src="Recommender-System.mp4" title="App Demo"></video>
-
 ### Usage: 
 1. Home Page: Users see a collection of top 50 books using popularty based filtering.
 2. Recommendation Page: After entering a book title, users will be presented with a list of recommended books, sorted based on collaborative filtering.
